@@ -1,0 +1,9 @@
+.idea
+modules/*/.terraform
+modules/*/.terraform.*
+modules/*/terraform.*
+data/
+.terraform
+.terraform.*
+terraform.*
+test/
