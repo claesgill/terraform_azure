@@ -19,15 +19,17 @@ resource "azurerm_resource_group" "resource_group" {
 // Create VNet
 module "vnet" {
   source = "./modules/vnet"
-  location = var.location
+
+  # Variables
   resourcegroup_name = var.resourcegroup_name
+  location           = var.location
 
   depends_on = [
     azurerm_resource_group.resource_group
   ]
 }
 
-// Loop over each student in variable list and create VM
+// Loop over each student in students list and create VM(s)
 module "vdi" {
   source = "./modules/vdi"
 

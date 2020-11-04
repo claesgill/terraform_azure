@@ -24,3 +24,14 @@ After deployment you can use the output variables found in [Outputs](#outputs).
 |------|-------------|------|
 | network_security_group_id | The network security group id | string |
 | subnet_id | The subnetwork id | string |
+
+### Example
+```hcl
+module "vnet" {
+  source = "./modules/vnet"
+
+  # Variables
+  resourcegroup_name = "my-resource-group"
+  location           = "westeurope"
+}
+```

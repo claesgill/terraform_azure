@@ -19,3 +19,20 @@ See the [Inputs](#inputs) for spesific requirements.
 
 ### Outputs
 None
+
+### Example
+```hcl
+module "vdi" {
+  source = "./modules/vdi"
+
+  # Variables
+  resourcegroup_name        = "my-resource-group"
+  location                  = "westeurope"
+  network_security_group_id = "123nlk324løkj3546øl"
+  subnet_id                 = "543ølk3j45908345lkl"
+  script_path               = "setup/post_install_gnomedesktop.sh"
+  password                  = "Password123!"
+  students                  = ["Jon"]
+  skip_extension            = false
+}
+```
