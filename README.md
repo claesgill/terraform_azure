@@ -38,7 +38,9 @@ $ make all
 | create_resourcegroup | Set to true if you want to create a new resourcegroup | bool | false | no |
 
 ### Outputs
-None
+| Name | Description | Type |
+| :--- | :---------- | :--- |
+| password | The password that is created for the VM | string |
 
 ### Clean up
 ```sh
