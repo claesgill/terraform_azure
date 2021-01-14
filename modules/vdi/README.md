@@ -18,7 +18,9 @@ See the [Inputs](#inputs) for spesific requirements.
 | password | Password for the created VM/VDIs | string | - | yes |
 
 ### Outputs
-None
+ Name | Description |
+|------|-------------|
+| vdi_password | The password that is created for the VM |
 
 ### Example
 ```hcl
