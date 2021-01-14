@@ -21,7 +21,7 @@ variable "network_security_group_id" {
 variable "script_path" {
   description = "Path to post-install script"
   type        = string
-//  default     = "setup/post_install_gnomedesktop.sh"
+  // default     = "setup/post_install_gnomedesktop.sh"
 }
 
 variable "skip_extension" {

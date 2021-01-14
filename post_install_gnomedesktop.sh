@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install gnome desktop
+# Install Gnome desktop
 sudo apt-get -y update
 sudo apt-get -y upgrade
 #sudo apt-get -y -q=2  install xfce4 xfce4-goodies
@@ -21,12 +21,29 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 sudo apt-get update
 sudo apt-get install azure-cli
 
-# Install Azure SDK
+# Install pip3
+sudo apt-get install python3-pip
+
+# Install python packages
+pip3 install azureml-core
+pip3 install azureml-dataprep
+# pip3 install azureml-train
+pip3 install azureml-train-core
+pip3 install pandas
+pip3 install torch
+pip3 install torchvision
+pip3 install tqdm
+pip3 install Unidecode
 
 # Install VS Code
+sudo snap install --classic code
 
-# Install VS Code extentions?
+# Install VS Code extentions
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+code --install-extension liviuschera.noctis
+
+# Git clone repo
+git clone https://github.com/claesgill/azure_ml_workshop2.git
 
 # Install Terraform?
-
-# 
