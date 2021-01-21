@@ -25,6 +25,8 @@ you need to set these as well:
 ```
 
 ### Usage
+> :warning: Setup configuration should only be done in `variables.tf`.
+
 The following command will create a resource group, virtual network and finally deploy a VM to Azure:
 ```sh
 $ make all
@@ -33,14 +35,19 @@ $ make all
 ### Inputs
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| resourcegroup_name | Resource group for VM | string | "testVDI" | no |
+| resourcegroup_name | Resource group for VM | string | "workshop" | no |
 | location | Location for the resources | string | "westeurope" | no |
 | create_resourcegroup | Set to true if you want to create a new resourcegroup | bool | false | no |
+| skip_extension | Skip extension (post-installation) if true | bool | false | no |
+| students | List of students to create VMs for | list(string) | ["claes"] | no |
+| password | Password for the created VM/VDIs | string | null | no |
+| script_path | Path of the script to post install on VM(s). | string | "./post_install_gnome_and_azure.sh" | no |
 
 ### Outputs
-| Name | Description | Type |
-| :--- | :---------- | :--- |
-| password | The password that is created for the VM | string |
+| Name | Description |
+| :--- | :---------- |
+| password | The password that is created for the VM |
+| created_vms | VM(s) that got created |
 
 ### Clean up
 ```sh

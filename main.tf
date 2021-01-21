@@ -9,6 +9,10 @@ resource "random_password" "password" {
   special = false
 }
 
+locals {
+  password = var.password != null ? var.password : random_password.password.result
+}
+
 // Create resource (if needed)
 resource "azurerm_resource_group" "resource_group" {
   count    = var.create_resourcegroup ? 1 : 0
@@ -38,8 +42,8 @@ module "vdi" {
   location                  = var.location
   network_security_group_id = module.vnet.network_security_group_id
   subnet_id                 = module.vnet.subnet_id
-  script_path               = "./modules/vdi/setup/post_install_gnomedesktop.sh"
-  password                  = random_password.password.result
-  students                  = ["gicl"]
-  skip_extension            = true
+  script_path               = var.script_path
+  password                  = local.password
+  students                  = var.students
+  skip_extension            = var.skip_extension
 }
